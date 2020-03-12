@@ -7,7 +7,8 @@ Example configuration for the following images:
 #### Merchant Admin Config:
 ```json
 {
-  "targetTag": "is-firearm",
+  "triggerTags": ["is-firearm", "is-knife"],
+  "triggerProperties": [{"label": "type", "value": "firearm"}],
   "barText": "Firearm purchases are disabled. Click to contact for purchasing.",
   "barColor": "orange",
   "barFontColor": "white",

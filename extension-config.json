@@ -34,13 +34,22 @@
     }
   ],
   "configuration": {
-    "targetTag": {
+    "triggerTags": {
       "type": "admin",
       "destination": "frontend",
-      "default": null,
+      "default": [],
       "params": {
-        "label": "Tag value to disable adding to cart",
-        "type": "text"
+        "label": "Array of product tags that disable adding to cart",
+        "type": "json"
+      }
+    },
+    "triggerProperties": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [],
+      "params": {
+        "label": "Array of product properties { label, value } that disable adding to cart",
+        "type": "json"
       }
     },
     "barText": {
@@ -73,7 +82,7 @@
     "contactNumber": {
       "type": "admin",
       "destination": "frontend",
-      "default": null,
+      "default": "",
       "params": {
         "label": "Merchants contact number",
         "type": "text"

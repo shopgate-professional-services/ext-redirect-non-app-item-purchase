@@ -5,10 +5,17 @@ Will prevent items with a given tag from being added to cart. A notice to call m
 ## Configuration
 This extension requires six configurations to be configured.
 
-targetTag
+triggerTags
 ```json
 {
-  "targetTag": "is-firearm"
+  "triggerTags": ["is-firearm", "is-knife"]
+}
+```
+
+triggerProperties
+```json
+{
+  "triggerProperties": [{ "label": "type", "value": "firearm" }]
 }
 ```
 
