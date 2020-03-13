@@ -1,13 +1,13 @@
 import React from 'react';
-import { I18n } from '@shopgate/engage/components';
+import { I18n, Link } from '@shopgate/engage/components';
 import styles from './style';
-import { barText, contactNumber } from '../../config';
+import { barText, purchaseRedirectHref } from '../../config';
 
 /**
  * @returns {JSX}
  */
-const FlaggedBar = () => (
-  <a href={`tel:${contactNumber}`}>
+const FlaggedBar = () => {
+  const content = (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
         <div className={styles.base}>
@@ -17,7 +17,17 @@ const FlaggedBar = () => (
         </div>
       </div>
     </div>
-  </a>
-);
+  );
+
+  if (!purchaseRedirectHref) {
+    return content;
+  }
+
+  return (
+    <Link href={purchaseRedirectHref}>
+      {content}
+    </Link>
+  );
+};
 
 export default FlaggedBar;

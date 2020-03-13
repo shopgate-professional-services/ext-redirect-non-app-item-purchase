@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from '@shopgate/engage/components';
 import { css } from 'glamor';
 import {
-  barColor, barFontColor, targetTag, contactNumber, favoritesNotice,
+  barColor, barFontColor, purchaseRedirectHref, favoritesNotice,
 } from '../../config';
+import connect from '../connector';
 
 const container = css({
   textAlign: 'center',
@@ -18,30 +20,36 @@ const container = css({
 /**
  * @returns {JSX}
  */
-const FavoritesProductNameAfter = ({ product }) => {
-  const { tags = [] } = product || {};
-
-  const flag = tags.includes(targetTag);
-
-  if (!flag) {
+const FavoritesProductNameAfter = ({ flaggedProduct }) => {
+  if (!flaggedProduct) {
     return null;
   }
 
-  return (
-    <a href={`tel:${contactNumber}`} className={container}>
+  const content = (
+    <div className={container}>
       <div>
         {favoritesNotice}
       </div>
-    </a>
+    </div>
+  );
+
+  if (!purchaseRedirectHref) {
+    return content;
+  }
+
+  return (
+    <Link href={purchaseRedirectHref}>
+      {content}
+    </Link>
   );
 };
 
 FavoritesProductNameAfter.propTypes = {
-  product: PropTypes.shape(),
+  flaggedProduct: PropTypes.bool,
 };
 
 FavoritesProductNameAfter.defaultProps = {
-  product: null,
+  flaggedProduct: false,
 };
 
-export default FavoritesProductNameAfter;
+export default connect(FavoritesProductNameAfter);
