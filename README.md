@@ -1,6 +1,6 @@
 # Shopgate Connect - Redirect Non-App Item Purchase
 
-Will prevent items with a given tag from being added to cart. A notice to call merchant will be displayed.
+Will prevent items with one or more of the triggering tags or product properties from being added to cart. A notice to call merchant will be displayed.
 
 ## Configuration
 This extension requires six configurations to be configured.
@@ -36,14 +36,14 @@ barColor
 barFontColor
 ```json
 {
-  "barFontColor": "whit"
+  "barFontColor": "white"
 }
 ```
 
 contactNumber
 ```json
 {
-  "contactNumber": "123-456-7890"
+  "purchaseRedirectHref": "tel:123-456-7890"
 }
 ```
 

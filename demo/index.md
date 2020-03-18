@@ -12,7 +12,7 @@ Example configuration for the following images:
   "barText": "Firearm purchases are disabled. Click to contact for purchasing.",
   "barColor": "orange",
   "barFontColor": "white",
-  "contactNumber": "123-456-7890",
+  "purchaseRedirectHref": "tel:123-456-7890",
   "favoritesNotice": "Cannot add this product to cart. Click to contact merchant"
 }
 ```
