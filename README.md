@@ -1,6 +1,58 @@
-# Shopgate Connect - Redirect Non-App Item Purchases
+# Shopgate Connect - Redirect Non-App Item Purchase
 
-Will prevent items with a given tag from being added to cart. A notice to call merchant will be displayed.
+Will prevent items with one or more of the triggering tags or product properties from being added to cart. A notice to call merchant will be displayed.
+
+## Configuration
+This extension requires six configurations to be configured.
+
+triggerTags
+```json
+{
+  "triggerTags": ["is-firearm", "is-knife"]
+}
+```
+
+triggerProperties
+```json
+{
+  "triggerProperties": [{ "label": "type", "value": "firearm" }]
+}
+```
+
+barText
+```json
+{
+  "barText": "Firearm purchases are disabled. Click to contact for purchasing."
+}
+```
+
+barColor
+```json
+{
+  "barColor": "orange"
+}
+```
+
+barFontColor
+```json
+{
+  "barFontColor": "white"
+}
+```
+
+contactNumber
+```json
+{
+  "purchaseRedirectHref": "tel:123-456-7890"
+}
+```
+
+favoritesNotice
+```json
+{
+  "favoritesNotice": "Cannot add this product to cart. Click to contact merchant"
+}
+```
 
 ## About Shopgate
 

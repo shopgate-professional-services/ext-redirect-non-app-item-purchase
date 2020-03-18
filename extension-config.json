@@ -2,7 +2,100 @@
   "version": "1.0.0",
   "id": "@shopgate-project/redirect-non-app-item-purchase",
   "components": [
+    {
+      "id": "ProductAddToCartBar",
+      "path": "frontend/portals/ProductAddToCartBar/index.jsx",
+      "target": "product.add-to-cart-bar",
+      "type": "portals"
+    },
+    {
+      "id": "ProductCTASAddToCartBar",
+      "path": "frontend/portals/ProductCTASAddToCartBar/index.jsx",
+      "target": "product.ctas.add-to-cart",
+      "type": "portals"
+    },
+    {
+      "id": "ProductTaxDisclaimerAfter",
+      "path": "frontend/portals/ProductTaxDisclaimerAfter/index.jsx",
+      "target": "product.tax-disclaimer.after",
+      "type": "portals"
+    },
+    {
+      "id": "FavoritesAddToCart",
+      "path": "frontend/portals/FavoritesAddToCart/index.jsx",
+      "target": "favorites.add-to-cart",
+      "type": "portals"
+    },
+    {
+      "id": "FavoritesProductNameAfter",
+      "path": "frontend/portals/FavoritesProductNameAfter/index.jsx",
+      "target": "favorites.product-name.after",
+      "type": "portals"
+    }
   ],
   "configuration": {
+    "triggerTags": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [],
+      "params": {
+        "label": "Array of product tags that disable adding to cart",
+        "type": "json"
+      }
+    },
+    "triggerProperties": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [],
+      "params": {
+        "label": "Array of product properties { label, value } that disable adding to cart",
+        "type": "json"
+      }
+    },
+    "barText": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "Firearm purchases are disabled. Click to contact for purchasing.",
+      "params": {
+        "label": "Text to display in bar for disabled products",
+        "type": "text"
+      }
+    },
+    "barColor": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "orange",
+      "params": {
+        "label": "Background color to fill bar for disabled products",
+        "type": "text"
+      }
+    },
+    "barFontColor": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "white",
+      "params": {
+        "label": "Font color for bar on disabled products",
+        "type": "text"
+      }
+    },
+    "purchaseRedirectHref": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "",
+      "params": {
+        "label": "Merchants contact number",
+        "type": "text"
+      }
+    },
+    "favoritesNotice": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "Cannot add this product to cart. Click to contact merchant",
+      "params": {
+        "label": "Text to display on favorites list",
+        "type": "text"
+      }
+    }
   }
 }
